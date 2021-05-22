@@ -5,25 +5,39 @@
  */
 package Model;
 
-/**
- *
- * @author Erwin
- */
+
 public class Asistentes {
     
     private int nit;
     private String nombre;
     private String fecha;
-
+    
+    
+    public static int max = 125, perm = 50;
+    
+    
+    /*
+    
+        CONTRUCTOR VACIO Y CON PARAMATROS
+    
+    */
+    
+    // CONTRUCTOR CON PARAMETROS
     public Asistentes(int nit, String nombre, String fecha) {
         this.nit = nit;
         this.nombre = nombre;
         this.fecha = fecha;
     }
-
+    
+    //CONTRUCTOR VACIO
     public Asistentes() {
     }
 
+    
+        /*
+        USO DE GETTER Y SETTER
+    */
+    
     public int getNit() {
         return nit;
     }
@@ -49,7 +63,9 @@ public class Asistentes {
     }
     
     
-    
+    public int hashCode(){
+        return (nit & 0x7fffffff) % max;
+    }
     
         
 }

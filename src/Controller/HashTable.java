@@ -15,3 +15,13 @@ public class HashTable {
     }
     
 }
+
+
+
+/*
+
+private int hast(){
+    Integer key = 0;
+    key = (k & 0x7fffffff)% size;
+    return key
+*/

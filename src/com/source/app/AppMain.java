@@ -5,15 +5,23 @@
  */
 package com.source.app;
 
+import Model.Asistentes;
+import java.io.*;
+import java.util.LinkedList;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author Asus
  */
 public class AppMain extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AppMain
-     */
+   
+    LinkedList<Asistentes> as = new LinkedList<>();
+    
+    
+    
     public AppMain() {
         initComponents();
     }
@@ -164,6 +172,7 @@ public class AppMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_reporteActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */

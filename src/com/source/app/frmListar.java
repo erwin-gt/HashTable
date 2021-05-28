@@ -5,17 +5,86 @@
  */
 package com.source.app;
 
+import Model.Asistentes;
+import java.io.*;
+import java.util.LinkedList;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author Asus
  */
 public class frmListar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmListar
-     */
+        
+    LinkedList<Asistentes> as = new LinkedList<>();
+    
+        
+        
     public frmListar() {
         initComponents();
+        cargarArchivo();
+        llenarDatos();
+        
+        
+    }
+    public void cargarArchivo(){
+        
+        FileReader fr = null;
+        BufferedReader br = null;
+        
+        try{
+            fr = new FileReader("C:\\TEMP\\prueba.csv");
+            br = new BufferedReader(fr);
+            
+            String line;
+            
+            while ((line=br.readLine())!=null){
+            Asistentes a = new Asistentes();
+            String arreglo [] = line.split(",");
+            if(arreglo.length<=4){
+                
+                a.setNit(Integer.parseInt(arreglo[0]));
+                a.setNombre(arreglo[1]);
+                a.setFecha(arreglo[2]);
+                a.setDireccion(arreglo[3]);
+                as.add(a);
+            }
+        }
+            llenarDatos();
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            try{
+                if(fr!= null){
+                    fr.close();
+                }
+            }catch(Exception e){
+                e.printStackTrace();
+                }
+        }
+        
+    }
+    
+    public void llenarDatos(){
+        DefaultTableModel tb = new DefaultTableModel(new String[]{"HASH","NIT","Nombre","Fecha Nacimiento","Direccion"},as.size());
+        Asistentes s = new Asistentes();
+        
+        jtDatos.setModel(tb);
+        
+        TableModel tm = jtDatos.getModel();
+        
+        for(int i=0; i<as.size() ;i++){
+            Asistentes a = as.get(i);
+            tm.setValueAt(a.hashCode(), i, 0);
+            tm.setValueAt(a.getNit(), i, 1);
+            tm.setValueAt(a.getNombre(), i, 2);
+            tm.setValueAt(a.getFecha(), i, 3);
+            tm.setValueAt(a.getDireccion(), i, 4 );
+
+        }
+        
     }
 
     /**
@@ -29,7 +98,7 @@ public class frmListar extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtDatos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -37,7 +106,7 @@ public class frmListar extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Listado de Asistentes");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -48,7 +117,7 @@ public class frmListar extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jtDatos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,6 +180,9 @@ public class frmListar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jtDatos;
     // End of variables declaration//GEN-END:variables
+
+
+    
 }

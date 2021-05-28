@@ -33,14 +33,14 @@
                   <Component id="jSeparator2" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jDateChooser1" max="32767" attributes="0"/>
+                          <Component id="jdtFecha" max="32767" attributes="0"/>
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField2" max="32767" attributes="0"/>
-                          <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextField3" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
+                          <Component id="jtxtNit" max="32767" attributes="0"/>
+                          <Component id="jtxtName" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtxtAddress" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -67,7 +67,7 @@
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                      <Component id="jTextField2" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="jtxtNit" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -75,18 +75,18 @@
                   <Group type="102" attributes="0">
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTextField1" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jtxtName" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jButton2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jDateChooser1" min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="jdtFecha" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jTextField3" min="-2" pref="28" max="-2" attributes="0"/>
+              <Component id="jtxtAddress" min="-2" pref="28" max="-2" attributes="0"/>
               <EmptySpace pref="86" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -102,9 +102,9 @@
         <Property name="text" type="java.lang.String" value="Ingreso de Asistentes"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="jtxtName">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="jtxtNit">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -126,14 +126,17 @@
         <Property name="text" type="java.lang.String" value="Direccion"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="jtxtAddress">
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+    <Component class="com.toedter.calendar.JDateChooser" name="jdtFecha">
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>

@@ -5,23 +5,24 @@
  */
 package Controller;
 
+import Model.Asistentes;
+
 public class HashTable {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    
+    
+     //  FUNCION HASH
+    public void funcionHash(String [] cadenaArreglo, String[] arreglo){
+        int i;
+        Asistentes a = new Asistentes();
+        for(i = 0; i< cadenaArreglo.length; i++){
+            String elemento =  cadenaArreglo[i];
+           // a.perm
+            
+        }
     }
     
 }
 
 
 
-/*
-
-private int hast(){
-    Integer key = 0;
-    key = (k & 0x7fffffff)% size;
-    return key
-*/
